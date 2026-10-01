@@ -1,0 +1,22 @@
+services:
+
+  backend:
+    build: ./backend
+    container_name: ai-document-backend
+    env_file:
+      - ./backend/.env
+    ports:
+      - "5000:5000"
+    volumes:
+      - uploads_data:/app/uploads
+
+  frontend:
+    build: ./frontend
+    container_name: ai-document-frontend
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+
+volumes:
+  uploads_data:

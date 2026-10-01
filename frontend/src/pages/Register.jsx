@@ -1,5 +1,6 @@
 import {Link} from "react-router-dom";
 import { useState } from "react";
+import api from "../services/api";
 
 function Register(){
     const [fullName,setfullName] = useState("");
@@ -9,8 +10,30 @@ function Register(){
 
 
 
-     function submitHandler(){
-            return 1;
+     const submitHandler= async (e)=> {
+         e.preventDefault();
+        try{
+  const registerApi = await api.post('/auth/register',
+              {
+                name:fullName,
+                email:email,
+                password:password
+              }
+            );
+
+           
+                alert("register successfully")
+                
+            
+
+                setEmail("");
+                setPassword("");
+                setcnfmPassword("");
+                setfullName("");
+        }
+          catch(error){
+                            console.log(error);          }
+            
         }
     return (
        

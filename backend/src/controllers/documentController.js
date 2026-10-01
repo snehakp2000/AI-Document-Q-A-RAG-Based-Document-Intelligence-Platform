@@ -9,6 +9,9 @@ export const uploadDocument =async(req,res) =>{
         const {title} =req.body;
         const file = req.file;
 
+        console.log("BODY:", req.body);
+console.log("FILE:", req.file);
+
         if(!file || !title){
 
             return res.status(400).json({

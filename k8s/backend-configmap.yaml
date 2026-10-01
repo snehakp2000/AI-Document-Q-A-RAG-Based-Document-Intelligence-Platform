@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+
+metadata:
+  name: ai-document-backend-config
+
+data:
+  NODE_ENV: "production"
+  PORT: "5000"

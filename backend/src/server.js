@@ -5,8 +5,12 @@ import connectDB from "./config/database.js";
 import { authRoutes } from "./routes/authRoutes.js";
 import documentRoutes from "./routes/documentRoutes.js";
 import chatRoutes from "./routes/chatRoutes.js";
+import cors from 'cors';
+
 
 const app = express();
+
+app.use(cors());
 
 const PORT = process.env.PORT || 5000;
 

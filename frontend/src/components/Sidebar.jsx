@@ -1,6 +1,7 @@
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 
 function Sidebar(){
+    const Navigate = useNavigate();
     return <aside className="sidebar">
         <h2 className="sidebar-header">AI Document Q&A</h2>
         <nav>
@@ -9,7 +10,7 @@ function Sidebar(){
             <Link to='/chat'>AI Chat</Link>
             
         </nav>
-        <button className="button-logout">Logout</button>
+        <button className="button-logout" onClick={()=>Navigate('/login')}>Logout</button>
     </aside>
 
     
